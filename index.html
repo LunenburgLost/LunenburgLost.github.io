@@ -110,7 +110,7 @@
       <h5>For general enquiries and course information </h5>
       <p>contact@marthawillow.com </p>
       <h5>Password </h5>
-      <input type="text" id="password" name="password" value="" size="20" class="acg-input-block" style="bottom: 10px;" onfocus="fResetClue(id)" onclick="fClearClue(id)";>
+      <input type="text" id="id-password" name="password" value="" size="20" class="acg-input-block" style="bottom: 10px;" onfocus="fResetPassword(id)" onclick="fClearPassword(id)";>
   </div>
 
 </div>
@@ -124,6 +124,46 @@
 </footer>
 
 <!-- Functions -->
+<script>
+
+/* Global variables*/
+  function fCheckPassword() {
+    document.getElementById("idCheckClues").disabled = true;
+    document.getElementById("idCluesTips").disabled = true;
+    document.getElementById("idCheckClues").innerHTML = "Vérification des mots ...";
+    fResetPassword();
+    setTimeout(function() {fCheckInput("distance en km", document.getElementById("id-card1").value, "id-card1");},1000);
+    setTimeout(function() {document.getElementById("idCheckClues").disabled = false;},6000);
+    setTimeout(function() {document.getElementById("idCheckClues").innerHTML = "Vérifier les mots trouvés";},6000);
+    setTimeout(function() {document.getElementById("idCluesTips").disabled = false;},6000);
+  }
+
+  function fClearPassword(password){
+    document.getElementById(password).style.color = "#ffffcc";
+    document.getElementById(password).value = "";
+  }
+
+  function fResetPassword(password){
+    document.getElementById(password).style.color = "#ffffcc";
+  }
+
+  function fResetPassword(){
+    fResetPassword ("id-password");
+  }
+
+  function fCheckInput(answer, input, idcard) {
+    if (input == "") {
+      document.getElementById(idcard).value = "(missing)";
+      document.getElementById(idcard).style.color = "#ff4000";
+    }
+    else if ((input).toLowerCase() == answer) {
+      document.getElementById(idcard).style.color = "	#006400";
+        }
+    else {
+      document.getElementById(idcard).style.color = "#ff4000";
+    }
+  }
+</script>
 
 </body>
 </html>
