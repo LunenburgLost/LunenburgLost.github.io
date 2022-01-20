@@ -130,7 +130,7 @@
 
   function fSubmitPassword() {
     document.getElementById("idSubmitPassword").disabled = true;
-    fCheckInput("DIXON 2", document.getElementById("id-password").value, "id-password");
+    fCheckInput("dixon 2", document.getElementById("id-password").value, "id-password");
     document.getElementById("idSubmitPassword").disabled = false;
   }
 
@@ -149,8 +149,7 @@
       document.getElementById(idcard).style.color = "	#006400";
         }
     else {
-      document.getElementById(idcard).value = "(incorrect password)";
-      document.getElementById(idcard).style.color = "#006400";
+      document.getElementById(idcard).style.color = "#ff4000";
     }
   }
 
