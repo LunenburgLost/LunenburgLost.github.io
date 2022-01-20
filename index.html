@@ -110,8 +110,9 @@
       <h5>For general enquiries and course information </h5>
       <p>contact@marthawillow.com </p>
       <p>
+        <br>
         <h5>Password </h5>
-        <input type="text" id="id-password" name="password" value="(type password)" size="20" class="acg-input-block" onfocus="fResetPassword(id)" onclick="fClearPassword(id)";>
+        <input type="text" id="id-password" name="password" value="" size="20" class="acg-input-block" onfocus="fResetPassword(id)" onclick="fClearPassword(id)";>
         <button id="idCheckPassword" class="w3-light-grey w3-button" onclick="fCheckPassword()">Submit</button>
       </p>
   </div>
@@ -131,14 +132,8 @@
 
 /* Global variables*/
   function fCheckPassword() {
-    document.getElementById("idCheckClues").disabled = true;
-    document.getElementById("idCluesTips").disabled = true;
-    document.getElementById("idCheckClues").innerHTML = "Vérification des mots ...";
+    document.getElementById("idCheckPassword").disabled = true;
     fResetPassword();
-    setTimeout(function() {fCheckInput("distance en km", document.getElementById("id-card1").value, "id-card1");},1000);
-    setTimeout(function() {document.getElementById("idCheckClues").disabled = false;},6000);
-    setTimeout(function() {document.getElementById("idCheckClues").innerHTML = "Vérifier les mots trouvés";},6000);
-    setTimeout(function() {document.getElementById("idCluesTips").disabled = false;},6000);
   }
 
   function fClearPassword(password){
