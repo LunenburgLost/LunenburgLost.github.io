@@ -308,7 +308,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   padding-right: 5px;
   font-size: 20px;
   background-color: inherit;
-  border-color: inherit;
+  border-color: red;
   border-width: 2px;
 }
 
