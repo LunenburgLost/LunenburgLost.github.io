@@ -293,8 +293,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     text-align: center;
     }
 
-
-
 .acg-text-block {
   position: absolute;
   color: red;
@@ -304,14 +302,14 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 .acg-input-block {
-  position: absolute;
+  position: relative;
   color: #ffffcc;
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 30px;
+  font-size: 20px;
   background-color: inherit;
   border-color: inherit;
-  border-width: 0px;
+  border-width: 2px;
 }
 
 /* ACG Change - Center an item in a div section*/
