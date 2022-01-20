@@ -134,8 +134,7 @@
   function fSubmitPassword() {
     document.getElementById("idSubmitPassword").disabled = true;
     fResetPassword();
-    setTimeout(function() {fCheckInput("DIXON 2", document.getElementById("id-password").value, "id-password");},1000);
-    setTimeout(function() {document.getElementById("idSubmitPassword").innerHTML = "Submit";},6000);
+    fCheckInput("DIXON 2", document.getElementById("id-password").value, "id-password");
   }
 
   function fClearPassword(password){
