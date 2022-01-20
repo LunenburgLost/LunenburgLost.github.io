@@ -113,7 +113,7 @@
         <br>
         <h5>Password </h5>
         <input type="text" id="id-password" name="password" value="" size="20" class="acg-input-block" onfocus="fResetPassword(id)" onclick="fClearPassword(id)";>
-        <button id="idCheckPassword" class="w3-light-grey w3-button" onclick="fCheckPassword()">Submit</button>
+        <button id="idSubmitPassword" class="w3-light-grey w3-button" onclick="fSubmitPassword()">Submit</button>
       </p>
   </div>
 
@@ -130,10 +130,12 @@
 <!-- Functions -->
 <script>
 
-/* Global variables*/
-  function fCheckPassword() {
-    document.getElementById("idCheckPassword").disabled = true;
+
+  function fSubmitPassword() {
+    document.getElementById("idSubmitPassword").disabled = true;
     fResetPassword();
+    setTimeout(function() {fCheckInput("DIXON 2", document.getElementById("id-password").value, "id-password");},1000);
+    setTimeout(function() {document.getElementById("idSubmitPassword").innerHTML = "Submit";},6000);
   }
 
   function fClearPassword(password){
@@ -145,6 +147,9 @@
     document.getElementById(password).style.color = "#ffffcc";
   }
 
+  function fResetPassword(){
+    fResetPassword ("id-password");
+  }
 
   function fCheckInput(answer, input, idcard) {
     if (input == "") {
@@ -158,7 +163,7 @@
       document.getElementById(idcard).style.color = "#ff4000";
     }
   }
-</script>
 
+</script>
 </body>
 </html>
