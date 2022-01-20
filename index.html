@@ -142,14 +142,14 @@
   function fCheckInput(answer, input, idcard) {
     if (input == "") {
       document.getElementById(idcard).value = "(enter a password)";
-      document.getElementById(idcard).style.color = "#006400";
+      document.getElementById(idcard).style.color = "#ff4000";
     }
     else if ((input).toLowerCase() == answer) {
       document.getElementById(idcard).value = "(correct password)";
       document.getElementById(idcard).style.color = "	#006400";
         }
     else {
-      document.getElementById(idcard).style.color = "#ff4000";
+      document.getElementById(idcard).style.color = "#006400";
     }
   }
 
