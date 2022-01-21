@@ -20,19 +20,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- Page content -->
 <div class="w3-content" style="max-width:700px">
   <div class="w3-padding-large">
-    <h2>Well done!</h2>
+    <h2>You found the website!</h2>
     <p>Congratulations on finding the secret website I set up to share more information
-      with you. </p>
+      with you. But that's only the beginning ...</p>
 
-      <p>In a few days you'll receive a package with all my research and along with
-      the contents of this website you'll have everything you need to complete my
-      work and find the secret object I was looking for.</p>
+      <p>In a few days you'll receive a package with documents, letters, maps, photos ...
+      combined with the contents of this website, everything will make sense.</p>
 
-      <p>For added security, the information in this website is protected by a password,
-      which is hidden in the package you will receive. </p>
-
-      <p>Here is a clue: look for something that will
-      never be number one.</p>
+      <p>For added security, the information avaiable on this website is protected by a password,
+      which is hidden in the package you will receive.
+      Here is a clue: look for something that will never be number one.</p>
 
       <br>
       <h2>If you need to email me </h2>
@@ -41,7 +38,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <br>
       <h2>Password to access my research </h2>
       <p>
-        <input type="text" id="id-password" name="password" value="" size="20" class="acg-input-block" onclick="fClearPassword(id)";>
+        <input type="text" id="id-password" name="password" value="" size="20" class="acg-input-block" onclick="fClearPassword(id)">
         <button id="idSubmitPassword" class="w3-light-grey w3-button" onclick="fSubmitPassword()">Submit</button>
       </p>
   </div>
@@ -61,20 +58,21 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     document.getElementById("idSubmitPassword").disabled = true;
     fCheckInput("dixon 2", document.getElementById("id-password").value, "id-password");
     document.getElementById("idSubmitPassword").disabled = false;
+    document.getElementById(password).style.color = "#000000";
   }
 
   function fClearPassword(password){
-    <!--document.getElementById(password).style.color = "black";-->
+    document.getElementById(password).style.color = "#000000";
     document.getElementById(password).value = "";
   }
 
   function fCheckInput(answer, input, idcard) {
     if (input == "") {
       document.getElementById(idcard).value = "(enter a password)";
-      document.getElementById(idcard).style.color = "#ff4000";
+      document.getElementById(idcard).style.color = "#000000";
     }
     else if ((input).toLowerCase() == answer) {
-      document.getElementById(idcard).value = "(correct password)";
+      document.getElementById(idcard).value = "";
       document.getElementById(idcard).style.color = "	#4CAF50";
       window.open("lunenburglost.html","_self");
         }
