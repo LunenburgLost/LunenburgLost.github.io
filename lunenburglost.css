@@ -236,6 +236,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 
 /* ACG additions */
+/* To center an image*/
+.w3-image-center{border-radius:8px; max-width:100%; height:auto; display:block; margin-left:auto; margin-right:auto}img{vertical-align:middle}a{color:inherit}
+
 /* ACG added fonts */
 /* devanagari */
 @font-face {
