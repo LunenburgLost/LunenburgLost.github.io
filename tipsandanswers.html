@@ -36,7 +36,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <div class= "w3-center">
         <p class="w3-medium w3-text-grey w3-center"><i>I want to see the spoilers</i>
           <br>
-          <input type="text" id="idUserInput" name="inputSpoiler" class="w3-center" size="35" autofocus placeholder="(type: I want to see the spoilers)" pattern="I want to see the spoilers" oninput="fSpoiler()">
+          <input type="text" id="idUserInput" class="w3-center" size="35" autofocus placeholder="(type: I want to see the spoilers)" pattern="I want to see the spoilers" oninput="fSpoiler()">
         </p>
         <br>
         <svg height="10" width="700">
@@ -156,6 +156,7 @@ let vItem = 'vItem initialised';
   function fSelectCard2(choice,id){
     document.getElementById("idSelectCard2").innerHTML = choice;
     vItem = id;
+    fClearAnswer();
   }
 
   function fSelectHint(choice,id){
@@ -346,15 +347,14 @@ let vItem = 'vItem initialised';
     }
   }
 
-
-
   function fCheckInput(answer, input) {
+    input =
     if (input == "") {
       document.getElementById("idInputAnswer").style.color = "#000000";
       document.getElementById("idOutcomeAnswer").style.color = "#000000";
       document.getElementById("idOutcomeAnswer").innerHTML = '';
     }
-    else if ((input).toLowerCase() == answer) {
+    else if ((input.search(answer)) >= 0) {
       document.getElementById("idInputAnswer").style.color = "	#4CAF50";
       document.getElementById("idOutcomeAnswer").style.color = "#4CAF50";
       document.getElementById("idOutcomeAnswer").innerHTML = 'The answer is correct';
