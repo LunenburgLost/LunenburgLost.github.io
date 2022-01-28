@@ -9,11 +9,9 @@
 <style>
   body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   .w3-bar-block .w3-bar-item {padding:20px}
+
   /* To change the aspect of the placeholder text vs the input text */
   ::placeholder {color: grey; font-size: 12px;}
-  /* To add an arrow to the dropdown lists */
-  .w3-arrow {border: solid black; border-width: 0 3px 3px 0; display: inline-block; padding: 3px;}
-  .w3-down {transform: rotate(45deg); -webkit-transform: rotate(45deg);}
 </style>
 
 <body>
@@ -51,10 +49,8 @@
       <!-- Getting hints: Dropdown lis: card -->
       <div class="w3-third w3-center">
         <div class="w3-dropdown-hover">
-          <button disabled id="idSelectCard" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select an item
-            <span class="w3-arrow w3-down"></span>
-          </button>
-          <div class="w3-dropdown-content w3-bar-block w3-border" >
+          <button disabled id="idSelectCard" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select an item</button>
+          <div class="w3-dropdown-content w3-bar-block w3-border">
             <button disabled id="idCard11" class="w3-button w3-left" onclick="fSelectCard(innerHTML,11)">Location 1 - 1st street</button>
             <button disabled id="idCard12" class="w3-button w3-left" onclick="fSelectCard(innerHTML,12)">Location 1 - 2nd street</button>
             <button disabled id="idCard21" class="w3-button w3-left" onclick="fSelectCard(innerHTML,21)">Location 2 - 1st street</button>
@@ -71,9 +67,7 @@
       <!-- Getting hints: Dropdown lis: hint -->
       <div class="w3-third w3-center">
         <div class="w3-dropdown-hover">
-          <button disabled id="idSelectHint" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select a type of hint
-            <span class="w3-arrow w3-down"></span>
-          </button>
+          <button disabled id="idSelectHint" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select a type of hint</button>
           <div class="w3-dropdown-content w3-bar-block w3-border">
             <button disabled id="idHint1" class="w3-button w3-left" onclick="fSelectHint(innerHTML,1)">A subtle hint</button>
             <button disabled id="idHint2" class="w3-button w3-left" onclick="fSelectHint(innerHTML,2)">A strong hint</button>
@@ -89,10 +83,9 @@
       </div>
       <br>
       <br>
-      <br>
       <!-- Getting hints: Displays the hint -->
       <h4>Your hint</h4>
-        <p class="w3-medium w3-text-grey" style="border: 1px solid grey;
+        <p class="hint w3-medium w3-text-grey" style="border: 1px solid grey;
         border-radius: 2px; padding-top:5px; padding-bottom:5px; padding-left:5px; padding-right:5px;"
         id="idHintText">(You must select an item and a hint level to view the hints)</p>
         <br>
@@ -106,9 +99,7 @@
       <!-- Checking answers: Dropdown list of cards -->
       <div class="w3-third w3-center">
         <div class="w3-dropdown-hover">
-          <button disabled id="idSelectCard2" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select an item
-            <span class="w3-arrow w3-down"></span>
-          </button>
+          <button disabled id="idSelectCard2" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select an item</button>
           <div class="w3-dropdown-content w3-bar-block w3-border">
             <button disabled id="idCard112" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'112')">Location 1 - 1st street</button>
             <button disabled id="idCard122" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'122')">Location 1 - 2nd street</button>
