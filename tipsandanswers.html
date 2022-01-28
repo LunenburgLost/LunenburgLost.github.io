@@ -5,167 +5,163 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="lunenburglost.css">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-.w3-bar-block .w3-bar-item {padding:20px}
 
+<style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+  .w3-bar-block .w3-bar-item {padding:20px}
+
+  /* To change the aspect of the placeholder text vs the input text */
+  ::placeholder {color: grey; font-size: 12px;}
 </style>
 
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <a href="whatnext.html" class="w3-button w3-padding-4 w3-left">Back</a>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+      <a href="whatnext.html" class="w3-button w3-padding-4 w3-left">Back</a>
+    </div>
   </div>
-</div>
 
-
-<!-- Page content -->
-<div class="w3-content" style="max-width:700px">
-  <div class="w3-padding-large">
-    <br>
-    <br>
-
-    <h2>Are you stuck?</h2>
+  <!-- Page content -->
+  <div class="w3-content" style="max-width:700px">
+    <div class="w3-padding-large">
+      <br>
+      <br>
+      <h2>Are you stuck?</h2>
       <p>If you are stuck and need a little push, you can get some tips or even check your answers.</p>
-
       <p> SPOILER ALERT: The hints below may contain spoilers which could ruin the adventure for you.
-      To make sure you are not accessing the hints by mistake, type the following sentence in the box:</p>
-
+        To make sure you are not accessing the hints by mistake, type the following sentence in the box:</p>
+      <!-- Spoiler confirmation -->
       <div class= "w3-center">
-        <p class="w3-medium w3-text-grey w3-center"><i>I want to see the spoilers</i>
+          <p class="w3-medium w3-text-grey w3-center"><i>I want to see the spoilers</i>
           <br>
-          <input type="text" id="idUserInput" class="w3-center" size="35" autofocus placeholder="(type: I want to see the spoilers)" pattern="I want to see the spoilers" oninput="fSpoiler()">
-        </p>
-        <br>
-        <svg height="10" width="700">
-          <line x1="0" y1="0" x2="700" y2="0" style="stroke:rgb(0,0,0);stroke-width:3" />
-        </svg>
+          <input type="text" id="idUserInput" class="w3-center" size="35" style="padding-top:5px;" autofocus placeholder="(type: I want to see the spoilers)" pattern="I want to see the spoilers" oninput="fSpoiler()">
+          </p>
+        </div>
+      <br>
+
+      <!-- Getting hints: section header -->
+      <div>
+        <hr style="width:79%" class="w3-left">
+        <h2> Get a hint</h2>
       </div>
-
-
-<!-- Getting hints -->
-    <h4>Select an item and a type of hint</h4>
-    <div class="w3-third w3-center">
-      <div class="w3-dropdown-hover">
-        <button disabled id="idSelectCard" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select an item</button>
-        <div class="w3-dropdown-content w3-bar-block w3-border">
-          <button disabled id="idCard11" class="w3-button w3-left" onclick="fSelectCard(innerHTML,11)">Location 1 - part 1</button>
-          <button disabled id="idCard12" class="w3-button w3-left" onclick="fSelectCard(innerHTML,12)">Location 1 - part 2</button>
-          <button disabled id="idCard21" class="w3-button w3-left" onclick="fSelectCard(innerHTML,21)">Location 2 - part 1</button>
-          <button disabled id="idCard22" class="w3-button w3-left" onclick="fSelectCard(innerHTML,22)">Location 2 - part 2</button>
-          <button disabled id="idCard31" class="w3-button w3-left" onclick="fSelectCard(innerHTML,31)">Location 3 - part 1</button>
-          <button disabled id="idCard32" class="w3-button w3-left" onclick="fSelectCard(innerHTML,32)">Location 3 - part 2</button>
-          <button disabled id="idCard41" class="w3-button w3-left" onclick="fSelectCard(innerHTML,41)">Location 4 - part 1</button>
-          <button disabled id="idCard42" class="w3-button w3-left" onclick="fSelectCard(innerHTML,42)">Location 4 - part 2</button>
-          <button disabled id="idCard5" class="w3-button w3-left" onclick="fSelectCard(innerHTML,5)">Hidden message location</button>
-          <button disabled id="idCard6" class="w3-button w3-left" onclick="fSelectCard(innerHTML,6)">Hidden message key</button>
+      <h4>Select an item and a type of hint</h4>
+      <!-- Getting hints: Dropdown lis: card -->
+      <div class="w3-third w3-center">
+        <div class="w3-dropdown-hover">
+          <button disabled id="idSelectCard" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select an item</button>
+          <div class="w3-dropdown-content w3-bar-block w3-border">
+            <button disabled id="idCard11" class="w3-button w3-left" onclick="fSelectCard(innerHTML,11)">Location 1 - First street</button>
+            <button disabled id="idCard12" class="w3-button w3-left" onclick="fSelectCard(innerHTML,12)">Location 1 - Second street</button>
+            <button disabled id="idCard21" class="w3-button w3-left" onclick="fSelectCard(innerHTML,21)">Location 2 - First street</button>
+            <button disabled id="idCard22" class="w3-button w3-left" onclick="fSelectCard(innerHTML,22)">Location 2 - Second street</button>
+            <button disabled id="idCard31" class="w3-button w3-left" onclick="fSelectCard(innerHTML,31)">Location 3 - First street</button>
+            <button disabled id="idCard32" class="w3-button w3-left" onclick="fSelectCard(innerHTML,32)">Location 3 - Second street</button>
+            <button disabled id="idCard41" class="w3-button w3-left" onclick="fSelectCard(innerHTML,41)">Location 4 - First street</button>
+            <button disabled id="idCard42" class="w3-button w3-left" onclick="fSelectCard(innerHTML,42)">Location 4 - Second street</button>
+            <button disabled id="idCard5" class="w3-button w3-left" onclick="fSelectCard(innerHTML,5)">Hidden message location</button>
+            <button disabled id="idCard6" class="w3-button w3-left" onclick="fSelectCard(innerHTML,6)">Hidden message key</button>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="w3-third w3-center">
-      <div class="w3-dropdown-hover">
-        <button disabled id="idSelectHint" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select a type of hint</button>
-        <div class="w3-dropdown-content w3-bar-block w3-border">
+      <!-- Getting hints: Dropdown lis: hint -->
+      <div class="w3-third w3-center">
+        <div class="w3-dropdown-hover">
+          <button disabled id="idSelectHint" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select a type of hint</button>
+          <div class="w3-dropdown-content w3-bar-block w3-border">
             <button disabled id="idHint1" class="w3-button w3-left" onclick="fSelectHint(innerHTML,1)">A subtle hint</button>
             <button disabled id="idHint2" class="w3-button w3-left" onclick="fSelectHint(innerHTML,2)">A strong hint</button>
             <button disabled id="idHint3" class="w3-button w3-left" onclick="fSelectHint(innerHTML,3)">An obvious hint</button>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="w3-third w3-center">
-      <div class="w3-dropdown-hover">
-        <button disabled id="idDisplayHint" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px" onclick="fDisplayHint()">Display the hint</button>
-      </div>
-    </div>
-
-    <br>
-    <br>
-    <h4>Your hint</h4>
-    <i class="w3-medium w3-text-grey w3-center" style="border: 1px solid grey; border-radius: 2px; padding-top:5px; padding-bottom:5px; padding-left:5px; padding-right:5px" id="idHintText">(You must select an item and a hint level to view the hints)</i>
-
-    <br>
-    <br>
-    <br>
-    <svg height="10" width="700">
-      <line x1="0" y1="0" x2="700" y2="0" style="stroke:rgb(0,0,0);stroke-width:3" />
-    </svg>
-
-<!-- Checking the answers -->
-    <h4>Select an item to check your answer</h4>
-
-    <div class="w3-third w3-center">
-      <div class="w3-dropdown-hover">
-      <button disabled id="idSelectCard2" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select an item</button>
-        <div class="w3-dropdown-content w3-bar-block w3-border">
-          <button disabled id="idCard112" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'112')">Location 1 - part 1</button>
-          <button disabled id="idCard122" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'122')">Location 1 - part 2</button>
-          <button disabled id="idCard212" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'212')">Location 2 - part 1</button>
-          <button disabled id="idCard222" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'222')">Location 2 - part 2</button>
-          <button disabled id="idCard312" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'312')">Location 3 - part 1</button>
-          <button disabled id="idCard322" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'322')">Location 3 - part 2</button>
-          <button disabled id="idCard412" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'412')">Location 4 - part 1</button>
-          <button disabled id="idCard422" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'422')">Location 4 - part 2</button>
-          <button disabled id="idCard52" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'52')">Hidden message location</button>
-          <button disabled id="idCard62" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'62')">Hidden message key</button>
+      <!-- Button: display hint -->
+      <div class="w3-third w3-center">
+        <div class="w3-dropdown-hover">
+          <button disabled id="idDisplayHint" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px" onclick="fDisplayHint()">Display the hint</button>
         </div>
       </div>
+      <br>
+      <br>
+      <!-- Getting hints: Displays the hint -->
+      <h4>Your hint</h4>
+        <p class="hint w3-medium w3-text-grey" style="border: 1px solid grey;
+        border-radius: 2px; padding-top:5px; padding-bottom:5px; padding-left:5px; padding-right:5px;"
+        id="idHintText">(You must select an item and a hint level to view the hints)</p>
+        <br>
+
+      <!-- Checking answers: section header -->
+      <div>
+        <hr style="width:59%" class="w3-left">
+        <h2> Check your answers</h2>
+      </div>
+      <h4>Select an item to check your answer</h4>
+      <!-- Checking answers: Dropdown list of cards -->
+      <div class="w3-third w3-center">
+        <div class="w3-dropdown-hover">
+          <button disabled id="idSelectCard2" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px">Select an item</button>
+          <div class="w3-dropdown-content w3-bar-block w3-border">
+            <button disabled id="idCard112" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'112')">Location 1 - First street</button>
+            <button disabled id="idCard122" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'122')">Location 1 - Second street</button>
+            <button disabled id="idCard212" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'212')">Location 2 - First street</button>
+            <button disabled id="idCard222" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'222')">Location 2 - Second street</button>
+            <button disabled id="idCard312" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'312')">Location 3 - First street</button>
+            <button disabled id="idCard322" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'322')">Location 3 - Second street</button>
+            <button disabled id="idCard412" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'412')">Location 4 - First street1</button>
+            <button disabled id="idCard422" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'422')">Location 4 - Second street</button>
+            <button disabled id="idCard52" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'52')">Hidden message location</button>
+            <button disabled id="idCard62" class="w3-button w3-left" onclick="fSelectCard2(innerHTML,'62')">Hidden message key</button>
+          </div>
+        </div>
+      </div>
+      <!-- Checking answers: Input the answer -->
+      <div class="w3-third w3-center w3-text-grey">
+        <input disabled type="text" id="idInputAnswer" name="answer" value="" size="20"  onclick="fClearAnswer()">
+        <p id="idOutcomeAnswer" class="w3-medium w3-text-black w3-center"></p>
+      </div>
+      <!-- Checking answers: Check answer button -->
+      <div class="w3-third w3-center">
+        <button disabled id="idCheckAnswer" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px" onclick="fCheckAnswer()">Check your answer</button>
+      </div>
+      <br>
+      <br>
     </div>
-
-    <div class="w3-third w3-center w3-text-grey">
-      <input disabled type="text" id="idInputAnswer" name="answer" value="" size="20"  onclick="fClearAnswer()">
-      <p id="idOutcomeAnswer" class="w3-medium w3-text-black w3-center"></p>
-    </div>
-
-    <div class="w3-third w3-center">
-      <button disabled id="idCheckAnswer" class="w3-light-grey w3-button" style="letter-spacing:2px; font-size:14px" onclick="fCheckAnswer()">Check your answer</button>
-    </div>
-
-    <br>
-    <br>
-
   </div>
-</div>
 
+  <!-- Footer -->
+  <footer>
+    <hr>
+  </footer>
 
-<!-- Footer -->
-<footer>
-  <hr>
-</footer>
+  <!-- Functions -->
+    <script>
 
-<!-- Functions -->
-<script>
+    /* Global variables*/
+    let vCard = 'vCard initialised';
+    let vHint = 'vHint initialised';
+    let vItem = 'vItem initialised';
 
-/* Global variables*/
-let vCard = 'vCard initialised';
-let vHint = 'vHint initialised';
-let vItem = 'vItem initialised';
-
-/* Functions */
+    /* Functions */
     /*For the hints*/
-  function fSelectCard(choice,id){
-    document.getElementById("idSelectCard").innerHTML = choice;
-    vCard = id;
-    document.getElementById("idHintText").innerHTML = ' ... '
-  }
-
+    function fSelectCard(choice,id){
+      document.getElementById("idSelectCard").innerHTML = choice;
+      vCard = id;
+      document.getElementById("idHintText").innerHTML = ' ... '
+    }
     /*For the answers*/
-  function fSelectCard2(choice,id){
-    document.getElementById("idSelectCard2").innerHTML = choice;
-    vItem = id;
-    fClearAnswer();
-  }
+    function fSelectCard2(choice,id){
+      document.getElementById("idSelectCard2").innerHTML = choice;
+      vItem = id;
+      fClearAnswer();
+    }
 
-  function fSelectHint(choice,id){
+    function fSelectHint(choice,id){
     document.getElementById("idSelectHint").innerHTML = choice;
     vHint = id;
     document.getElementById("idHintText").innerHTML = ' ... '
   }
 
-  function fDisplayHint(){
+    function fDisplayHint(){
     var vOutput = vCard+"-"+vHint;
     document.getElementById("idHintText").innerHTML = "";
     switch (vOutput) {
@@ -265,48 +261,48 @@ let vItem = 'vItem initialised';
       }
   }
 
-  function fCheckAnswer(){
-      switch (vItem) {
-      case '112':
-        fCheckInput("prince", document.getElementById("idInputAnswer").value);
-        break;
-      case '122':
-        fCheckInput("fox", document.getElementById("idInputAnswer").value);
-        break;
-      case '212':
-        fCheckInput("pelham", document.getElementById("idInputAnswer").value);
-        break;
-      case '222':
-        fCheckInput("lincoln", document.getElementById("idInputAnswer").value);
-        break;
-      case '312':
-        fCheckInput("king", document.getElementById("idInputAnswer").value);
-        break;
-      case '322':
-        fCheckInput("kaulback", document.getElementById("idInputAnswer").value);
-        break;
-      case '412':
-        fCheckInput("townsend", document.getElementById("idInputAnswer").value);
-        break;
-      case '422':
-        fCheckInput("duke", document.getElementById("idInputAnswer").value);
-        break;
-      case '52':
-        fCheckInput("map", document.getElementById("idInputAnswer").value);
-      case '62':
-        fCheckInput("lucy clapp", document.getElementById("idInputAnswer").value);
-        break;
-      default:
-        document.getElementById("idOutcomeAnswer").innerHTML = '[error]';
-        break;
-      }
+    function fCheckAnswer(){
+  switch (vItem) {
+  case '112':
+    fCheckInput(" prince ", document.getElementById("idInputAnswer").value);
+    break;
+  case '122':
+    fCheckInput(" fox ", document.getElementById("idInputAnswer").value);
+    break;
+  case '212':
+    fCheckInput(" pelham ", document.getElementById("idInputAnswer").value);
+    break;
+  case '222':
+    fCheckInput(" lincoln ", document.getElementById("idInputAnswer").value);
+    break;
+  case '312':
+    fCheckInput(" king ", document.getElementById("idInputAnswer").value);
+    break;
+  case '322':
+    fCheckInput(" kaulback ", document.getElementById("idInputAnswer").value);
+    break;
+  case '412':
+    fCheckInput(" townsend ", document.getElementById("idInputAnswer").value);
+    break;
+  case '422':
+    fCheckInput(" duke ", document.getElementById("idInputAnswer").value);
+    break;
+  case '52':
+    fCheckInput(" map ", document.getElementById("idInputAnswer").value);
+  case '62':
+    fCheckInput(" lucy clapp ", document.getElementById("idInputAnswer").value);
+    break;
+  default:
+    document.getElementById("idOutcomeAnswer").innerHTML = '[error]';
+    break;
   }
+}
 
-  function fBack(){
-    window.open("recruitmenttest.html","_self");
-  }
+    function fBack(){
+      window.open("recruitmenttest.html","_self");
+    }
 
-  function fSpoiler() {
+    function fSpoiler() {
     if (document.getElementById("idUserInput").value == "I want to see the spoilers") {
       document.getElementById("idUserInput").style.color = "green";
       /*Prepare the HINT elements*/
@@ -347,34 +343,32 @@ let vItem = 'vItem initialised';
     }
   }
 
-  function fCheckInput(answer, input) {
-    input =
-    if (input == "") {
-      document.getElementById("idInputAnswer").style.color = "#000000";
-      document.getElementById("idOutcomeAnswer").style.color = "#000000";
-      document.getElementById("idOutcomeAnswer").innerHTML = '';
+    function fCheckInput(answer, input){
+      if (input == "") {
+        document.getElementById("idInputAnswer").style.color = "#000000";
+        document.getElementById("idOutcomeAnswer").style.color = "#000000";
+        document.getElementById("idOutcomeAnswer").innerHTML = '';
+      }
+      else if ((input.search(answer)) >= 0) {
+        document.getElementById("idInputAnswer").style.color = "	#4CAF50";
+        document.getElementById("idOutcomeAnswer").style.color = "#4CAF50";
+        document.getElementById("idOutcomeAnswer").innerHTML = 'The answer is correct';
+      }
+      else {
+        document.getElementById("idInputAnswer").style.color = "#ff4000";
+        document.getElementById("idOutcomeAnswer").style.color = "#ff4000";
+        document.getElementById("idOutcomeAnswer").innerHTML = 'The answer is incorrect';
+      }
     }
-    else if ((input.search(answer)) >= 0) {
-      document.getElementById("idInputAnswer").style.color = "	#4CAF50";
-      document.getElementById("idOutcomeAnswer").style.color = "#4CAF50";
-      document.getElementById("idOutcomeAnswer").innerHTML = 'The answer is correct';
-        }
-    else {
-      document.getElementById("idInputAnswer").style.color = "#ff4000";
-      document.getElementById("idOutcomeAnswer").style.color = "#ff4000";
-      document.getElementById("idOutcomeAnswer").innerHTML = 'The answer is incorrect';
-    }
-  }
 
-  function fClearAnswer(){
+    function fClearAnswer(){
     document.getElementById("idInputAnswer").style.color = "#000000";
     document.getElementById("idInputAnswer").value = "";
     document.getElementById("idOutcomeAnswer").innerHTML = '';
     document.getElementById("idOutcomeAnswer").style.color = "#000000";
   }
 
-
-</script>
+  </script>
 
 </body>
 </html>
