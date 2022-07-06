@@ -48,13 +48,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <br>
       <h2>Access the information I left for you </h2>
       <p>
-      <p> (enter the password) </p>
-        <input type="text" id="id-password1" name="password1" onfocus="this.value=''" value="" size="1"  style="text-align:center;" autofocus oninput="fFocusNext(2)">
-        <input type="text" id="id-password2" name="password2" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(3)">
-        .
-        <input type="text" id="id-password3" name="password3" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(4)">
-        <input type="text" id="id-password4" name="password4" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(5)">
-        <button id="idSubmitPassword" class="w3-light-grey w3-button" onclick="fSubmitPassword()">Check the password</button>
+        <input type="text" id="id-password" name="password" value="(enter the password)" size="25"  onclick="fClearPassword(id)">
+        <button id="idSubmitPassword" class="w3-light-grey w3-button" onclick="fSubmitPassword()">Submit</button>
       </p>
   </div>
 
@@ -69,30 +64,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- Functions -->
 <script>
 
-
   function fSubmitPassword() {
     document.getElementById("idSubmitPassword").disabled = true;
-    fCheckInput("0","1","1","6", document.getElementById("id-password").value, "id-password");
+    fCheckInput("dixon 2", document.getElementById("id-password").value, "id-password");
     document.getElementById("idSubmitPassword").disabled = false;
     document.getElementById(password).style.color = "#000000";
   }
 
-  function fFocusNext(NextElement) {
-    if (NextElement == "2") {
-      document.getElementById("id-password2").focus();
-    }
-    else if (NextElement == "3") {
-      document.getElementById("id-password3").focus();
-    }
-    else if (NextElement == "4") {
-      document.getElementById("id-password4").focus();
-    }
-    else if (NextElement == "5") {
-      document.getElementById("idSubmitPassword").focus();
-    }
+  function fClearPassword(password){
+    document.getElementById(password).style.color = "#000000";
+    document.getElementById(password).value = "";
   }
-
-
 
   function fCheckInput(answer, input, idcard) {
     if (input == "") {
