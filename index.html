@@ -48,13 +48,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <br>
       <h2>Access the information I left for you </h2>
       <p>
-      <p> (enter the password) </p>
-        <input type="text" id="id-password1" name="password1" onfocus="this.value=''" value="" size="1"  style="text-align:center;" autofocus oninput="fFocusNext(2)">
-        <input type="text" id="id-password2" name="password2" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(3)">
-        .
-        <input type="text" id="id-password3" name="password3" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(4)">
-        <input type="text" id="id-password4" name="password4" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(5)">
-        <button id="idSubmitPassword" class="w3-light-grey w3-button" onclick="fSubmitPassword()">Check the password</button>
+      <p id="id-playerinstructions"> (enter the password) </p>
+      <input type="text" id="id-password1" name="password1" onfocus="this.value=''" value="" size="1"  style="text-align:center;" autofocus oninput="fFocusNext(2)">
+      <input type="text" id="id-password2" name="password2" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(3)">
+     .
+      <input type="text" id="id-password3" name="password3" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(4)">
+      <input type="text" id="id-password4" name="password4" onfocus="this.value=''" value="" size="1"  style="text-align:center;" oninput="fFocusNext(5)">
+      <button id="idSubmitPassword" class="w3-light-grey w3-button" onclick="fSubmitPassword()">Check the password</button>
       </p>
   </div>
 
@@ -72,9 +72,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
   function fSubmitPassword() {
     document.getElementById("idSubmitPassword").disabled = true;
-    fCheckInput("0","1","1","6", document.getElementById("id-password").value, "id-password");
+    let input1 = document.getElementById("id-password1").value;
+    let input2 = document.getElementById("id-password2").value;
+    let input3 = document.getElementById("id-password3").value;
+    let input4 = document.getElementById("id-password4").value;
+    let inputresult = input1.concat(input2).concat(input3).concat(input4);
+    document.getElementById("id-playerinstructions").innerHTML = inputresult;
+    document.getElementById("id-playerinstructions").style.color = "#4CAF50";
+    fCheckInput(inputresult);
     document.getElementById("idSubmitPassword").disabled = false;
-    document.getElementById(password).style.color = "#000000";
   }
 
   function fFocusNext(NextElement) {
@@ -92,22 +98,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     }
   }
 
-
-
-  function fCheckInput(answer, input, idcard) {
-    if (input == "") {
-      document.getElementById(idcard).value = "(enter the password)";
-      document.getElementById(idcard).style.color = "#000000";
-    }
-    else if ((input).toLowerCase() == answer) {
-      document.getElementById(idcard).value = "";
-      document.getElementById(idcard).style.color = "	#4CAF50";
+  function fCheckInput(input) {
+    if (input == "0116") {
+      document.getElementById("id-playerinstructions").innerHTML = "(password is correct)";
+      document.getElementById("id-playerinstructions").style.color = "#4CAF50";
       window.open("lunenburglost.html","_self");
-        }
+    }
     else {
-      document.getElementById(idcard).style.color = "#ff4000";
+      document.getElementById("id-playerinstructions").innerHTML = "(password is incorrect)";
+      document.getElementById("id-playerinstructions").style.color = "#ff4000";
     }
   }
+
 
 </script>
 
